@@ -78,6 +78,7 @@ drone-mesh-pipeline/
 │   ├── __init__.py     # Public API: MeshConfig, MeshPipeline, exceptions
 │   ├── algorithms.py   # Mesh-size field construction (Threshold/Distance/Box)
 │   ├── cli.py          # Command-line interface
+│   ├── core.py         # MeshConfig + MeshPipeline orchestration
 │   ├── exceptions.py   # Exception hierarchy (MeshError and subclasses)
 │   └── services.py     # STEP import, boundary classification, quality, export
 ├── tests/              # Unit, integration, and property-based tests
@@ -87,14 +88,6 @@ drone-mesh-pipeline/
 ├── scripts/            # Helper scripts
 └── mesh/               # Generated mesh outputs (git-ignored)
 ```
-
-## Known issue
-
-`src/drone_mesh/__init__.py` and `src/drone_mesh/cli.py` both import
-`MeshConfig` and `MeshPipeline` from `drone_mesh.core`, but `core.py` is not yet
-present in the repository. Importing the package or running the CLI will fail
-until `core.py` is added. This is tracked as the primary blocker for a working
-release.
 
 ## Testing
 
